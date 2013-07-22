@@ -18,3 +18,9 @@
 #result li.available:hover {
     background: #fffbdd;
 }
+
+#best li:hover {
+    cursor: pointer;
+    text-decoration: line-through;
+    color: #777;
+}

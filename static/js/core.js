@@ -20,9 +20,12 @@ function clean_domain(q) {
 };
 
 $(function() {
-    var bucket = location.hash.match(/#\/(\w+)/);
+    var bucket;
+    var bucket_match = location.hash.match(/#\/(\w+)/);
 
-    if (!bucket) {
+    if (bucket_match) {
+        bucket = bucket_match[1];
+    } else {
         bucket = random_string(BUCKET_LEN);
         location.hash = '#/' + bucket;
     }
@@ -63,7 +66,11 @@ $(function() {
     });
 
     fbase.child('best').on('child_added', function(data) {
-        $('#best').prepend('<li>' + data.val() + '</li>');
+        var li = $('<li>' + data.val() + '</li>').click(function() {
+            data.ref().remove();
+            $(this).remove();
+        });
+        $('#best').prepend(li);
     });
 
 });
