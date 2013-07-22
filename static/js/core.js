@@ -2,15 +2,34 @@ var SEARCH_API = 'http://hood.instantdomainsearch.com/services/quick?callback=?'
 var TLDS = ['biz', 'co', 'com', 'mobi', 'net', 'org'];
 
 var FIREBASE_API = 'https://wedomainsearch.firebaseio.com';
-var FIREBASE_BUCKET = 'demo';
+var BUCKET_LEN = 8;
+
+function random_string(num, alphabet) {
+    alphabet = alphabet || 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var r = '';
+
+    for (var i=num; i > 0; i--) {
+        r += alphabet[~~(Math.random() * alphabet.length)];
+    }
+
+    return r;
+};
 
 function clean_domain(q) {
     return q.split('.', 1)[0];
-}
+};
 
 $(function() {
-    var fbase = new Firebase(FIREBASE_API + '/' + FIREBASE_BUCKET);
+    var bucket = location.hash.match(/#\/(\w+)/);
 
+    if (!bucket) {
+        bucket = random_string(BUCKET_LEN);
+        location.hash = '#/' + bucket;
+    }
+
+    $('#share').html('Share this address to collaborate: <a href="'+ location.href +'">'+ location.href +'</a>');
+
+    var fbase = new Firebase(FIREBASE_API + '/' + bucket);
 
     $('#domain-query').submit(function() {
         var q = clean_domain($('#query', this).val());
