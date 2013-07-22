@@ -1,3 +1,20 @@
 .not-available {
     text-decoration: line-through;
 }
+
+#history {
+    color: #aaa;
+}
+
+#history li:first {
+    color: #888;
+}
+
+#result li.available {
+    color: green;
+    cursor: pointer;
+}
+
+#result li.available:hover {
+    background: #fffbdd;
+}

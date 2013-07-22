@@ -7,10 +7,13 @@
 
     <link href="static/css/screen.css" rel="stylesheet"></link>
 
+    <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+
 </head>
 
 <body>
 
+<h1><em>We</em> Domain Search</h1>
 
 <div>
     <form id="domain-query" action="" onsubmit="return false;">
@@ -18,14 +21,28 @@
     </form>
 </div>
 
-<ul id="result"></ul>
+<div>
+    <h2>Results</h2>
 
+    <ul id="result"></ul>
+</div>
 
-<footer>Powered by <a href="http://instantdomainsearch.com">instantdomainsearch.com</a></footer>
+<div>
+    <h2>Top picks</h2>
+
+    <ul id="best"></ul>
+</div>
+
+<div>
+    <h2>Recent searches</h2>
+
+    <ul id="history"></ul>
+</div>
+
+<footer>Powered by <a href="http://instantdomainsearch.com">Instant Domain Search</a> and <a href="http://www.firebase.com/">Firebase</a>.</footer>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="static/js/core.js" type="text/javascript"></script>
-
+<script src="static/js/core.js"></script>
 
 
 </body>
