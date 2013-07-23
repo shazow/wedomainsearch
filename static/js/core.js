@@ -1,5 +1,4 @@
-var SEARCH_API = 'http://hood.instantdomainsearch.com/services/quick?callback=?';
-var TLDS = ['biz', 'co', 'com', 'mobi', 'net', 'org'];
+var SEARCH_API = 'http://domai.nr/api/json/search?callback=?';
 
 var FIREBASE_API = 'https://wedomainsearch.firebaseio.com';
 var BUCKET_LEN = 8;
@@ -39,16 +38,16 @@ $(function() {
 
         fbase.child('history').push().set(q);
 
-        $.getJSON(SEARCH_API, {'name': q}, function(data) {
+        $.getJSON(SEARCH_API, {'q': q}, function(data) {
             var ul = $('#result').empty();
+            var results = data['results'];
 
-            for (var i in TLDS) {
-                var tld = TLDS[i];
-                var c = 'available';
-                if (data['tlds'].indexOf(tld) >= 0) {
-                    c = 'not-available';
-                }
-                var domain = q + '.' + tld;
+            for (var i in results) {
+                var r = results[i];
+                if (r['availability'] == 'tld') continue;
+
+                var domain = r['domain'];
+                var c = r['availability'] == 'available' && 'available' || 'not-available';
                 ul.append('<li class="'+ c +'" data-domain="' + domain + '">' + domain + '</li>');
             }
         });
