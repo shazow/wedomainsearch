@@ -5,6 +5,7 @@ http_path = "/static"
 project_path = "static"
 css_dir = "css"
 sass_dir = "../compass/sass"
+cache_location = "../compass/.cache"
 images_dir = "images"
 javascripts_dir = "js"
 
