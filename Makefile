@@ -4,7 +4,7 @@ serve:
 	python -m SimpleHTTPServer
 
 deploy:
-	s3cmd put index.html s3://wedomainsearch.com/
+	s3cmd put index.html favicon.ico s3://wedomainsearch.com/
 	s3cmd sync static/ s3://wedomainsearch.com/static/
 
 ## CSS:
