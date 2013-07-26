@@ -5,9 +5,9 @@ http_path = "/static"
 project_path = "static"
 css_dir = "css"
 sass_dir = "../compass/sass"
-cache_location = "../compass/.cache"
 images_dir = "images"
 javascripts_dir = "js"
+cache_dir = "../compass/.sass-cache"
 
 # You can select your preferred output style here (can be overridden via the command line):
 output_style = :expanded
@@ -17,7 +17,6 @@ relative_assets = true
 
 # To disable debugging comments that display the original location of your selectors. Uncomment:
 line_comments = false
-
 
 # If you prefer the indented syntax, you might want to regenerate this
 # project again passing --syntax sass, or you can uncomment this:
