@@ -14,9 +14,12 @@
 <body>
 
 <div id="share">
-    <h1><a href="/">we domain search</a></h1>
-    &mdash;
-    Share to collaborate:
+    <div class="container">
+        <h1><a href="/">we domain search</a></h1>
+        &mdash;
+        Share to collaborate:
+        <span id="share-link"></span>
+    </div>
 </div>
 
 <div class="container">
@@ -32,7 +35,10 @@
 
     <ul id="result" class="domain-list"></ul>
 
-    <ul id="history"></ul>
+    <div style="display:none;">
+        <h2>Recent searches</h2>
+        <ul id="history"></ul>
+    </div>
 </div>
 
 <footer>Created by <a href="http://shazow.net/">shazow</a>. Powered by <a href="http://domai.nr/">Domainr</a> and <a href="http://www.firebase.com/">Firebase</a>.</footer>

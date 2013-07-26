@@ -123,12 +123,16 @@ input {
         border-color: #73B909;
         color: #2e4a04;
         cursor: pointer;
+
+        &:hover {
+            background: #90c83b;
+            border-color: #90c83b;
+        }
     }
 }
 
 .container {
     @include container;
     margin: 0 auto $margin auto;
-    padding: $margin;
 }
 

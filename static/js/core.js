@@ -31,7 +31,7 @@ $(function() {
 
     $('#domain-query input:first').focus();
 
-    $('#share').append('<a class="share-link" href="'+ location.href +'">'+ location.href +'</a>');
+    $('#share-link').html('<a class="share-link" href="'+ location.href +'">'+ location.href +'</a>');
 
     var fbase = new Firebase(FIREBASE_API + '/' + bucket);
 
@@ -66,7 +66,7 @@ $(function() {
     });
 
     fbase.child('history').limit(10).on('child_added', function(data) {
-        $('#history').prepend('<li>' + data.val() + '</li>');
+        $('#history').prepend('<li>' + data.val() + '</li>').parent().fadeIn();
     });
 
     fbase.child('best').on('child_added', function(data) {

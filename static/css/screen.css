@@ -325,6 +325,10 @@ input[type="submit"] {
   color: #2e4a04;
   cursor: pointer;
 }
+input[type="submit"]:hover {
+  background: #90c83b;
+  border-color: #90c83b;
+}
 
 .container {
   width: 630px;
@@ -332,7 +336,6 @@ input[type="submit"] {
   overflow: hidden;
   *zoom: 1;
   margin: 0 auto 20px auto;
-  padding: 20px;
 }
 
 #share {
@@ -340,7 +343,6 @@ input[type="submit"] {
   line-height: 2em;
   background: #f0f0de;
   color: #84847a;
-  text-align: center;
 }
 #share a.share-link {
   color: #9d9d94;
@@ -355,13 +357,18 @@ input[type="submit"] {
   color: #000;
   word-spacing: -1px;
 }
+#share .container {
+  padding: 0 0 0 4em;
+}
 
 .not-available {
   text-decoration: line-through;
 }
 
-#history {
-  margin-top: 2em;
+h2 {
+  font-size: 1em;
+  font-weight: bold;
+  margin: 2em 0 0 2em;
 }
 
 #history li {
@@ -393,19 +400,19 @@ input[type="submit"] {
   content: "★";
   color: #f8bc1a;
 }
-#best li:hover {
-  cursor: pointer;
-  color: #888;
-}
 #best li:hover:before {
   content: "☆";
   color: #999;
   text-decoration: none;
 }
+#best li:hover {
+  cursor: pointer;
+  color: #bbb;
+}
 
 form {
   margin-left: 1.5em;
-  margin-top: 1em;
+  margin-top: 2em;
 }
 
 #query.loading {
