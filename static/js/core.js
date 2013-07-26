@@ -29,12 +29,14 @@ $(function() {
         location.hash = '#/' + bucket;
     }
 
-    $('#share').html('Share this address to collaborate: <a href="'+ location.href +'">'+ location.href +'</a>');
+    $('#domain-query input:first').focus();
+
+    $('#share').append('<a class="share-link" href="'+ location.href +'">'+ location.href +'</a>');
 
     var fbase = new Firebase(FIREBASE_API + '/' + bucket);
 
     $('#domain-query').submit(function() {
-        var q = clean_domain($('#query', this).val());
+        var q = clean_domain($('#query', this).addClass('loading').val());
 
         fbase.child('history').push().set(q);
 
@@ -50,6 +52,8 @@ $(function() {
                 var c = r['availability'] == 'available' && 'available' || 'not-available';
                 ul.append('<li class="'+ c +'" data-domain="' + domain + '">' + domain + '</li>');
             }
+
+            $('#query').removeClass('loading');
         });
 
         return false;
@@ -58,6 +62,7 @@ $(function() {
     $('#result').on('click', 'li.available', function() {
         var domain = $(this).attr('data-domain');
         fbase.child('best').push().set(domain);
+        $(this).addClass('active');
     });
 
     fbase.child('history').limit(10).on('child_added', function(data) {

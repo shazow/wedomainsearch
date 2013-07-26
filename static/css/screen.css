@@ -55,7 +55,7 @@ body {
   color: #5d5d5d;
   font-size: 75%;
   background-color: white;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -292,7 +292,6 @@ ul, ol {
 }
 
 li {
-  margin-bottom: 0.5em;
   list-style: none;
 }
 
@@ -308,8 +307,8 @@ input {
   border: 1px solid rgba(0, 0, 0, 0.5);
   padding: 0 7px;
   margin: 0 0.5em 0 0;
-  font-size: 0.8em;
-  line-height: 24px;
+  font-size: 2em;
+  line-height: 1.5em;
   vertical-align: middle;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -347,29 +346,81 @@ input[type="submit"]:hover {
   padding: 20px;
 }
 
+#share {
+  margin-top: 0;
+  line-height: 2em;
+  background: #f0f0de;
+  color: #84847a;
+  text-align: center;
+}
+#share a.share-link {
+  color: #9d9d94;
+  text-decoration: underline;
+}
+#share h1 {
+  display: inline;
+  font-size: 1em;
+  font-weight: bold;
+}
+#share h1 a {
+  color: #000;
+  word-spacing: -1px;
+}
+
 .not-available {
   text-decoration: line-through;
 }
 
 #history {
-  color: #aaa;
+  margin-top: 2em;
 }
 
-#history li:first {
-  color: #888;
+#history li {
+  color: #aaa;
+  margin-left: 2em;
+}
+
+#result li {
+  margin-left: 2em;
 }
 
 #result li.available {
+  margin-left: 0;
   color: green;
   cursor: pointer;
 }
-
-#result li.available:hover {
-  background: #fffbdd;
+#result li.available:before {
+  margin: 0 0.5em;
+  content: "☆";
+  color: #555555;
+}
+#result li.available:hover:before, #result li.available.active {
+  content: "★";
+  color: #f8bc1a;
 }
 
+#best li:before {
+  margin: 0 0.5em;
+  content: "★";
+  color: #f8bc1a;
+}
 #best li:hover {
   cursor: pointer;
-  text-decoration: line-through;
-  color: #777;
+  color: #888;
+}
+#best li:hover:before {
+  content: "☆";
+  color: #999;
+  text-decoration: none;
+}
+
+form {
+  margin-left: 1.5em;
+  margin-top: 1em;
+}
+
+#query.loading {
+  background-position: right 20px center;
+  background-repeat: no-repeat;
+  background-image: url("/static/images/throbber.gif");
 }

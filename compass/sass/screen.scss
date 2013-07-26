@@ -1,28 +1,89 @@
 @import "_base";
 
+#share {
+    margin-top: 0;
+    line-height: 2em;
+    background: #f0f0de;
+    color: #84847a;
+    text-align: center;
+
+    a.share-link {
+        color: lighten(#84847a, 10%);
+        text-decoration: underline;
+    }
+
+    h1 {
+        display: inline;
+        font-size: 1em;
+        font-weight: bold;
+
+        a {
+            color: #000;
+            word-spacing: -1px;
+        }
+    }
+}
+
 .not-available {
     text-decoration: line-through;
 }
 
 #history {
-    color: #aaa;
+    margin-top: 2em;
 }
 
-#history li:first {
-    color: #888;
+#history li {
+    color: #aaa;
+    margin-left: 2em;
+}
+
+#result li {
+    margin-left: 2em;
 }
 
 #result li.available {
+    margin-left: 0;
     color: green;
     cursor: pointer;
+
+    &:before {
+        margin: 0 0.5em;
+        content: "☆";
+        color: #555555;
+    }
+
+    &:hover:before, &.active {
+        content: "★";
+        color: #f8bc1a;
+    }
 }
 
-#result li.available:hover {
-    background: #fffbdd;
+#best li {
+    &:before {
+        margin: 0 0.5em;
+        content: "★";
+        color: #f8bc1a;
+    }
+
+    &:hover {
+        cursor: pointer;
+        color: #888;
+    }
+
+    &:hover:before {
+        content: "☆";
+        color: #999;
+        text-decoration: none;
+    }
 }
 
-#best li:hover {
-    cursor: pointer;
-    text-decoration: line-through;
-    color: #777;
+form {
+    margin-left: 1.5em;
+    margin-top: 1em;
+}
+
+#query.loading {
+    background-position: right 20px center;
+    background-repeat: no-repeat;
+    background-image: url("/static/images/throbber.gif");
 }

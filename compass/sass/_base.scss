@@ -2,7 +2,7 @@ $margin-small: 10px;
 $margin: $margin-small * 2;
 $span: 40px;
 
-$font-size: 14px;
+$font-size: 16px;
 
 $color-text: rgb(93, 93, 93);
 $color-header: rgb(60, 60, 60);
@@ -93,7 +93,6 @@ ul, ol {
 }
 
 li {
-    margin-bottom: 0.5em;
     list-style: none;
 }
 
@@ -110,8 +109,8 @@ input {
     border: $border-width solid rgba(0, 0, 0, 0.5);
     padding: 0 7px;
     margin: 0 0.5em 0 0;
-    font-size: 0.8em;
-    line-height: 24px;
+    font-size: 2em;
+    line-height: 1.5em;
     vertical-align: middle;
 
     @include border-radius(3px);

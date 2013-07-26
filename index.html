@@ -13,37 +13,26 @@
 
 <body>
 
+<div id="share">
+    <h1><a href="/">we domain search</a></h1>
+    &mdash;
+    Share to collaborate:
+</div>
+
 <div class="container">
-    <h1><em>We</em> Domain Search</h1>
 
-    <div id="share"></div>
+    <ul id="best" class="domain-list"></ul>
 
-    <div>
-        <form id="domain-query" action="" onsubmit="return false;">
-            <p>
-                <input type="text" id="query" placeholder="domain" />
-                <input type="submit" value="Search" />
-            </p>
-        </form>
-    </div>
+    <form id="domain-query" action="" onsubmit="return false;">
+        <p>
+            <input type="text" id="query" placeholder="domain" />
+            <input type="submit" value="Search" />
+        </p>
+    </form>
 
-    <div>
-        <h2>Results</h2>
+    <ul id="result" class="domain-list"></ul>
 
-        <ul id="result"></ul>
-    </div>
-
-    <div>
-        <h2>Top picks</h2>
-
-        <ul id="best"></ul>
-    </div>
-
-    <div>
-        <h2>Recent searches</h2>
-
-        <ul id="history"></ul>
-    </div>
+    <ul id="history"></ul>
 </div>
 
 <footer>Created by <a href="http://shazow.net/">shazow</a>. Powered by <a href="http://domai.nr/">Domainr</a> and <a href="http://www.firebase.com/">Firebase</a>.</footer>
