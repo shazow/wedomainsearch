@@ -317,24 +317,13 @@ input {
   border-radius: 3px;
 }
 input[type="submit"] {
-  padding: 0 1em;
-  background: #bbb;
-  border-color: #aaa;
-  color: #222;
-  font-weight: bold;
+  font-size: 1em;
+  padding: 0 2em;
+  line-height: 3em;
+  background: #73B909;
+  border-color: #73B909;
+  color: #2e4a04;
   cursor: pointer;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #cccccc));
-  background-image: -webkit-linear-gradient(#ffffff, #cccccc);
-  background-image: -moz-linear-gradient(#ffffff, #cccccc);
-  background-image: -o-linear-gradient(#ffffff, #cccccc);
-  background-image: linear-gradient(#ffffff, #cccccc);
-}
-input[type="submit"]:hover {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #dddddd));
-  background-image: -webkit-linear-gradient(#ffffff, #dddddd);
-  background-image: -moz-linear-gradient(#ffffff, #dddddd);
-  background-image: -o-linear-gradient(#ffffff, #dddddd);
-  background-image: linear-gradient(#ffffff, #dddddd);
 }
 
 .container {
@@ -386,7 +375,7 @@ input[type="submit"]:hover {
 
 #result li.available {
   margin-left: 0;
-  color: green;
+  color: #5c9407;
   cursor: pointer;
 }
 #result li.available:before {

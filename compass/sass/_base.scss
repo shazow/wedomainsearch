@@ -116,17 +116,13 @@ input {
     @include border-radius(3px);
 
     &[type="submit"] {
-        padding: 0 1em;
-        background: #bbb;
-        border-color: #aaa;
-        color: #222;
-        font-weight: bold;
+        font-size: 1em;
+        padding: 0 2em;
+        line-height: 3em;
+        background: #73B909;
+        border-color: #73B909;
+        color: #2e4a04;
         cursor: pointer;
-
-        @include background-image(linear-gradient(#fff, #ccc));
-    }
-    &[type="submit"]:hover {
-        @include background-image(linear-gradient(#fff, #ddd));
     }
 }
 
