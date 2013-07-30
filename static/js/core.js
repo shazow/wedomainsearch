@@ -19,7 +19,7 @@ function clean_domain(q) {
 };
 
 function buy_link(domain) {
-    return 'http://www.namecheap.com/domains/domain-name-search/results.aspx?domain='+ domain +'&tlds=&searchall=&type=singleidea&aff=53560';
+    return 'http://domai.nr/'+ domain +'/register';
 }
 
 $(function() {
