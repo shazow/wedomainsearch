@@ -18,6 +18,10 @@ function clean_domain(q) {
     return q.split('.', 1)[0];
 };
 
+function buy_link(domain) {
+    return 'http://www.namecheap.com/domains/domain-name-search/results.aspx?domain='+ domain +'&tlds=&searchall=&type=singleidea&aff=53560';
+}
+
 $(function() {
     var bucket;
     var bucket_match = location.hash.match(/#\/(\w+)/);
@@ -49,8 +53,20 @@ $(function() {
                 if (r['availability'] == 'tld') continue;
 
                 var domain = r['domain'];
-                var c = r['availability'] == 'available' && 'available' || 'not-available';
-                ul.append('<li class="'+ c +'" data-domain="' + domain + '">' + domain + '</li>');
+
+                if (r['availability'] != 'available') {
+                    ul.append('<li class="not-available">' + domain + '</li>');
+                    continue;
+                }
+
+                var li = $('<li class="available" data-domain="'+ domain +'"><a target="_blank" href="'+ buy_link(domain) +'">' + domain + '</a></li>');
+
+                $('<div class="control save"><span></span></div>').click(function() {
+                    var domain = $(this).parent().addClass('active').attr('data-domain');
+                    fbase.child('best').push().set(domain);
+                }).prependTo(li);
+
+                ul.append(li);
             }
 
             $('#query').removeClass('loading');
@@ -59,21 +75,17 @@ $(function() {
         return false;
     });
 
-    $('#result').on('click', 'li.available', function() {
-        var domain = $(this).attr('data-domain');
-        fbase.child('best').push().set(domain);
-        $(this).addClass('active');
-    });
-
-    fbase.child('history').limit(10).on('child_added', function(data) {
+    fbase.child('history').limit(12).on('child_added', function(data) {
         $('#history').prepend('<li>' + data.val() + '</li>').parent().fadeIn();
     });
 
     fbase.child('best').on('child_added', function(data) {
-        var li = $('<li>' + data.val() + '</li>').click(function() {
+        var domain = data.val();
+        var li = $('<li class="available"><a target="_blank" href="'+ buy_link(domain) +'">' + domain + '</a></li>');
+        $('<div class="control saved"><span></span></div>').click(function() {
             data.ref().remove();
-            $(this).remove();
-        });
+            $(this).parent().remove();
+        }).prependTo(li);
         $('#best').prepend(li);
     });
 

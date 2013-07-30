@@ -341,9 +341,10 @@ input[type="submit"]:hover {
 
 #share {
   margin-top: 0;
-  line-height: 2em;
   background: #f0f0de;
   color: #84847a;
+  font-size: 14px;
+  line-height: 36px;
 }
 #share a.share-link {
   color: #9d9d94;
@@ -351,12 +352,10 @@ input[type="submit"]:hover {
 }
 #share h1 {
   display: inline;
-  font-size: 1em;
-  font-weight: bold;
+  font-size: 18px;
 }
 #share h1 a {
-  color: #000;
-  word-spacing: -1px;
+  color: #333;
 }
 #share .container {
   padding: 0 0 0 4em;
@@ -372,43 +371,45 @@ h2 {
   margin: 2em 0 0 2em;
 }
 
+#history {
+  overflow: hidden;
+  margin-left: 2em;
+}
+
 #history li {
   color: #aaa;
+  float: left;
+  width: 30%;
+}
+
+#result li.not-available {
   margin-left: 2em;
 }
 
-#result li {
-  margin-left: 2em;
-}
-
-#result li.available {
-  margin-left: 0;
+.available, .available a {
   color: #5c9407;
+}
+
+.control {
   cursor: pointer;
+  float: left;
 }
-#result li.available:before {
+.control span {
   margin: 0 0.5em;
-  content: "☆";
-  color: #555555;
 }
-#result li.available:hover:before, #result li.available.active {
+
+.active .control {
+  cursor: default;
+}
+
+.saved > span:before, .save:hover > span:before, .active .save > span:before {
   content: "★";
   color: #f8bc1a;
 }
 
-#best li:before {
-  margin: 0 0.5em;
-  content: "★";
-  color: #f8bc1a;
-}
-#best li:hover:before {
+.saved:hover > span:before, .save > span:before {
   content: "☆";
-  color: #999;
-  text-decoration: none;
-}
-#best li:hover {
-  cursor: pointer;
-  color: #bbb;
+  color: #aaa;
 }
 
 form {
@@ -420,4 +421,30 @@ form {
   background-position: right 20px center;
   background-repeat: no-repeat;
   background-image: url("/static/images/throbber.gif");
+}
+
+.tip {
+  position: absolute;
+  background: #333;
+  color: #eee;
+  font-size: 0.7em;
+  padding: 2px 6px;
+  font-family: sans-serif;
+}
+.tip .arrow {
+  position: relative;
+  background: white;
+}
+.tip .arrow:after {
+  left: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-left-color: white;
+  border-width: 5px;
+  margin-top: -5px;
 }

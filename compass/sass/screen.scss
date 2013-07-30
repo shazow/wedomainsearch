@@ -1,10 +1,32 @@
 @import "_base";
 
+@mixin arrow($_background, $_width) {
+    position: relative;
+    background: $_background;
+
+    &:after {
+        left: 100%;
+        top: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+
+        border-left-color: $_background;
+        border-width: $_width;
+        margin-top: -$_width;
+    }
+}
+
+
 #share {
     margin-top: 0;
-    line-height: 2em;
     background: #f0f0de;
     color: #84847a;
+    font-size: 14px;
+    line-height: 36px;
 
     a.share-link {
         color: lighten(#84847a, 10%);
@@ -13,12 +35,10 @@
 
     h1 {
         display: inline;
-        font-size: 1em;
-        font-weight: bold;
+        font-size: 18px;
 
         a {
-            color: #000;
-            word-spacing: -1px;
+            color: #333;
         }
     }
 
@@ -38,51 +58,44 @@ h2 {
 }
 
 #history {
+    overflow: hidden;
+    margin-left: 2em;
 }
 
 #history li {
     color: #aaa;
+    float: left;
+    width: 30%;
+}
+
+#result li.not-available {
     margin-left: 2em;
 }
 
-#result li {
-    margin-left: 2em;
-}
-
-#result li.available {
-    margin-left: 0;
+.available, .available a {
     color: #5c9407;
-    cursor: pointer;
-
-    &:before {
-        margin: 0 0.5em;
-        content: "☆";
-        color: #555555;
-    }
-
-    &:hover:before, &.active {
-        content: "★";
-        color: #f8bc1a;
-    }
 }
 
-#best li {
-    &:before {
+.control {
+    cursor: pointer;
+    float: left;
+
+    span {
         margin: 0 0.5em;
-        content: "★";
-        color: #f8bc1a;
     }
+}
+.active .control {
+    cursor: default;
+}
 
-    &:hover:before {
-        content: "☆";
-        color: #999;
-        text-decoration: none;
-    }
+.saved > span:before, .save:hover > span:before, .active .save > span:before {
+    content: "★";
+    color: #f8bc1a;
+}
 
-    &:hover {
-        cursor: pointer;
-        color: #bbb;
-    }
+.saved:hover > span:before, .save > span:before {
+    content: "☆";
+    color: #aaa;
 }
 
 form {
@@ -94,4 +107,17 @@ form {
     background-position: right 20px center;
     background-repeat: no-repeat;
     background-image: url("/static/images/throbber.gif");
+}
+
+.tip {
+    position: absolute;
+    background: #333;
+    color: #eee;
+    font-size: 0.7em;
+    padding: 2px 6px;
+    font-family: sans-serif;
+
+    .arrow {
+        @include arrow(#fff, 5px);
+    }
 }
