@@ -64,6 +64,8 @@ $(function() {
                 $('<div class="control save"><span></span></div>').click(function() {
                     var domain = $(this).parent().addClass('active').attr('data-domain');
                     fbase.child('best').push().set(domain);
+
+                    ga('send', 'event', 'domain', 'star');
                 }).prependTo(li);
 
                 ul.append(li);
@@ -72,6 +74,7 @@ $(function() {
             $('#query').removeClass('loading');
         });
 
+        ga('send', 'event', 'domain', 'search');
         return false;
     });
 
