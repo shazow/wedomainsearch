@@ -5,7 +5,7 @@
 
     <title>WeDomainSearch &mdash; Collaborative domain search</title>
 
-    <link href="static/css/screen.css?3" rel="stylesheet"></link>
+    <link href="static/css/screen.css?4" rel="stylesheet"></link>
     <link href="/static/images/icon_128x128.png" rel="shortcut icon" type="image/icon"></link>
 
     <script src="https://cdn.firebase.com/v0/firebase.js"></script>
@@ -17,9 +17,11 @@
 <div id="share">
     <div class="container">
         <h1><a href="/">we domain search</a></h1>
-        &mdash;
-        Share to collaborate:
-        <span id="share-link"></span>
+        <div class="share-text">
+            &mdash;
+            Share to collaborate:
+            <span class="share-link"></span>
+        </div>
     </div>
 </div>
 
@@ -40,12 +42,20 @@
         <h2>Recent searches</h2>
         <ul id="history"></ul>
     </div>
+
+    <div id="intro">
+        <h1>Find available domains with friends</h1>
+
+        <p>Send <a href="" class="share-link">this link</a> to your friend and start searching for domains. Star the best domains and they'll instantly appear in your friend's browser too. When you find the perfect domain, click the link to buy it.</p>
+
+        <p class="tagline">Think of it like Etherpad for Domains.</p>
+    </div>
 </div>
 
 <footer>Created by <a href="http://shazow.net/">shazow</a>. Powered by <a href="http://domai.nr/">Domainr</a> and <a href="http://www.firebase.com/">Firebase</a>.</footer>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="static/js/core.js?2"></script>
+<script src="static/js/core.js?3"></script>
 
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

@@ -45,6 +45,10 @@
     .container {
         padding: 0 0 0 4em;
     }
+
+    .share-text {
+        display: inline;
+    }
 }
 
 .not-available {
@@ -70,6 +74,17 @@ h2 {
 
 #result li.not-available {
     margin-left: 2em;
+}
+
+#intro {
+    background: #eee;
+    padding: 10px 20px;
+    margin-top: 3em;
+    font-size: 14px;
+
+    strong {
+        color: #111;
+    }
 }
 
 .available, .available a {
@@ -100,7 +115,7 @@ h2 {
 
 form {
     margin-left: 1.5em;
-    margin-top: 2em;
+    margin-top: 1.5em;
 }
 
 #query.loading {
@@ -120,4 +135,9 @@ form {
     .arrow {
         @include arrow(#fff, 5px);
     }
+}
+
+.tagline {
+    font-weight: bold;
+    color: darken($color-text, 10%);
 }

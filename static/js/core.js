@@ -35,7 +35,8 @@ $(function() {
 
     $('#domain-query input:first').focus();
 
-    $('#share-link').html('<a class="share-link" href="'+ location.href +'">'+ location.href +'</a>');
+    $('span.share-link').html('<a class="share-link" href="'+ location.href +'">'+ location.href +'</a>');
+    $('a.share-link').attr('href', location.href);
 
     var fbase = new Firebase(FIREBASE_API + '/' + bucket);
 

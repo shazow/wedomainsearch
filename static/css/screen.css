@@ -118,19 +118,19 @@ p .right {
 
 a {
   text-decoration: underline;
-  color: #f3b169;
+  color: #f37934;
 }
 a:visited {
-  color: #ef983a;
+  color: #e65c0e;
 }
 a:focus {
-  color: #f7ca98;
+  color: #f69964;
 }
 a:hover {
-  color: #f7ca98;
+  color: #f69964;
 }
 a:active {
-  color: #aef798;
+  color: #9df664;
 }
 
 blockquote {
@@ -360,6 +360,9 @@ input[type="submit"]:hover {
 #share .container {
   padding: 0 0 0 4em;
 }
+#share .share-text {
+  display: inline;
+}
 
 .not-available {
   text-decoration: line-through;
@@ -384,6 +387,16 @@ h2 {
 
 #result li.not-available {
   margin-left: 2em;
+}
+
+#intro {
+  background: #eee;
+  padding: 10px 20px;
+  margin-top: 3em;
+  font-size: 14px;
+}
+#intro strong {
+  color: #111;
 }
 
 .available, .available a {
@@ -414,7 +427,7 @@ h2 {
 
 form {
   margin-left: 1.5em;
-  margin-top: 2em;
+  margin-top: 1.5em;
 }
 
 #query.loading {
@@ -447,4 +460,9 @@ form {
   border-left-color: white;
   border-width: 5px;
   margin-top: -5px;
+}
+
+.tagline {
+  font-weight: bold;
+  color: #444444;
 }
