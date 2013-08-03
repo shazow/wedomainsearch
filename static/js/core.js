@@ -78,7 +78,7 @@ $(function() {
         return false;
     });
 
-    fbase.child('history').limit(12).on('child_added', function(data) {
+    fbase.child('history').limit(60).on('child_added', function(data) {
         $('#history').prepend('<li>' + data.val() + '</li>').parent().fadeIn();
     });
 
