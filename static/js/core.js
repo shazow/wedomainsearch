@@ -19,7 +19,11 @@ function clean_domain(q) {
 };
 
 function buy_link(domain) {
-    return 'http://domai.nr/'+ domain +'/register';
+    var href = 'http://domai.nr/'+ domain +'/register';
+
+    return $('<a target="_blank" href="'+ href +'">' + domain + '</a>').click(function() {
+        ga('send', 'event', 'domain', 'shop');
+    });
 }
 
 $(function() {
@@ -60,7 +64,7 @@ $(function() {
                     continue;
                 }
 
-                var li = $('<li class="available" data-domain="'+ domain +'"><a target="_blank" href="'+ buy_link(domain) +'">' + domain + '</a></li>');
+                var li = $('<li class="available" data-domain="'+ domain +'"></li>').append(buy_link(domain));
 
                 $('<div class="control save"><span></span></div>').click(function() {
                     var domain = $(this).parent().addClass('active').attr('data-domain');
@@ -85,7 +89,7 @@ $(function() {
 
     fbase.child('best').on('child_added', function(data) {
         var domain = data.val();
-        var li = $('<li class="available"><a target="_blank" href="'+ buy_link(domain) +'">' + domain + '</a></li>');
+        var li = $('<li class="available"></li>').append(buy_link(domain));
         $('<div class="control saved"><span></span></div>').click(function() {
             data.ref().remove();
             $(this).parent().remove();
