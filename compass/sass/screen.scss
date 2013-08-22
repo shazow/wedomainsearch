@@ -28,9 +28,11 @@
     font-size: 14px;
     line-height: 36px;
 
+    a {
+        text-decoration: underline;
+    }
     a.share-link {
         color: lighten(#84847a, 10%);
-        text-decoration: underline;
     }
 
     h1 {
@@ -140,4 +142,19 @@ form {
 .tagline {
     font-weight: bold;
     color: darken($color-text, 10%);
+}
+
+#thanks {
+    position: absolute;
+    right: 0;
+    text-align: right;
+    margin-right: 10px;
+
+    a {
+        color: #e5722d;
+    }
+
+    .red {
+        color: red;
+    }
 }

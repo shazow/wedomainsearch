@@ -346,9 +346,11 @@ input[type="submit"]:hover {
   font-size: 14px;
   line-height: 36px;
 }
+#share a {
+  text-decoration: underline;
+}
 #share a.share-link {
   color: #9d9d94;
-  text-decoration: underline;
 }
 #share h1 {
   display: inline;
@@ -465,4 +467,17 @@ form {
 .tagline {
   font-weight: bold;
   color: #444444;
+}
+
+#thanks {
+  position: absolute;
+  right: 0;
+  text-align: right;
+  margin-right: 10px;
+}
+#thanks a {
+  color: #e5722d;
+}
+#thanks .red {
+  color: red;
 }
