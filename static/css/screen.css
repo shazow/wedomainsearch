@@ -479,7 +479,8 @@ form {
   color: #444444;
 }
 
-#thanks {
+#thanks, #thanks-again {
+  font-size: 14px;
   width: 165px;
   position: absolute;
   right: 0;
@@ -487,9 +488,17 @@ form {
   margin-right: 10px;
   z-index: 10;
 }
-#thanks a {
+#thanks a, #thanks-again a {
   color: #e5722d;
 }
-#thanks .red {
+#thanks .red, #thanks-again .red {
   color: red;
+}
+
+#thanks-again {
+  display: none;
+  line-height: 50px;
+  right: inherit;
+  text-align: left;
+  margin-left: 500px;
 }

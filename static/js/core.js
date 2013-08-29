@@ -87,6 +87,8 @@ $(function() {
         $('#history').prepend('<li>' + data.val() + '</li>').parent().fadeIn();
     });
 
+    var thanks_again = false;
+
     fbase.child('best').on('child_added', function(data) {
         var domain = data.val();
         var li = $('<li class="available"></li>').append(buy_link(domain));
@@ -95,6 +97,13 @@ $(function() {
             $(this).parent().remove();
         }).prependTo(li);
         $('#best').prepend(li);
+
+        if ($('#best li').length >= 3 && !thanks_again) {
+            thanks_again = true;
+            $('#thanks').fadeOut(function() {
+                $('#thanks-again').fadeIn();
+            });
+        }
     });
 
 });

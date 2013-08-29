@@ -156,7 +156,8 @@ form {
     color: darken($color-text, 10%);
 }
 
-#thanks {
+#thanks, #thanks-again {
+    font-size: 14px;
     width: 165px;
     position: absolute;
     right: 0;
@@ -171,4 +172,12 @@ form {
     .red {
         color: red;
     }
+}
+
+#thanks-again {
+    display: none;
+    line-height: 50px;
+    right: inherit;
+    text-align: left;
+    margin-left: 500px;
 }
