@@ -381,11 +381,20 @@ h2 {
   overflow: hidden;
   margin-left: 2em;
 }
-
 #history li {
   color: #aaa;
   float: left;
-  width: 30%;
+  width: 195px;
+  overflow: hidden;
+}
+
+#best {
+  overflow: hidden;
+}
+#best li {
+  float: left;
+  width: 195px;
+  overflow: hidden;
 }
 
 #result li.not-available {
@@ -430,7 +439,7 @@ h2 {
 
 form {
   margin-left: 1.5em;
-  margin-top: 1.5em;
+  margin-top: 2em;
 }
 
 #query.loading {

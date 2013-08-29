@@ -67,12 +67,23 @@ h2 {
 #history {
     overflow: hidden;
     margin-left: 2em;
+
+    li {
+        color: #aaa;
+        float: left;
+        width: 195px;
+        overflow: hidden;
+    }
 }
 
-#history li {
-    color: #aaa;
-    float: left;
-    width: 30%;
+#best {
+    overflow: hidden;
+
+    li {
+        float: left;
+        width: 195px;
+        overflow: hidden;
+    }
 }
 
 #result li.not-available {
@@ -118,7 +129,7 @@ h2 {
 
 form {
     margin-left: 1.5em;
-    margin-top: 1.5em;
+    margin-top: 2em;
 }
 
 #query.loading {
