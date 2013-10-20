@@ -386,6 +386,7 @@ h2 {
   float: left;
   width: 195px;
   overflow: hidden;
+  white-space: nowrap;
 }
 
 #best {
@@ -395,6 +396,7 @@ h2 {
   float: left;
   width: 195px;
   overflow: hidden;
+  white-space: nowrap;
 }
 
 #result li.not-available {
