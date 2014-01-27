@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   margin: 0;
   padding: 0;
@@ -240,19 +241,6 @@ caption {
   color: #3b3b3b;
 }
 
-footer {
-  width: 630px;
-  margin: 0 auto;
-  overflow: hidden;
-  *zoom: 1;
-  font-size: 0.8em;
-  border-top: 5px solid #ddd;
-  text-align: center;
-  margin-bottom: 1em;
-  margin-top: 3em;
-  padding-top: 0.5em;
-}
-
 a {
   text-decoration: none;
 }
@@ -337,6 +325,23 @@ input[type="submit"]:hover {
   overflow: hidden;
   *zoom: 1;
   margin: 0 auto 20px auto;
+}
+
+footer {
+  width: 630px;
+  margin: 0 auto;
+  overflow: hidden;
+  *zoom: 1;
+  font-size: 0.8em;
+  border-top: 5px solid #ddd;
+  text-align: center;
+  margin: 5em auto 1em auto;
+  padding-top: 0.5em;
+  background: #f8f8f8;
+}
+footer li {
+  margin-left: 1em;
+  text-align: left;
 }
 
 #share {

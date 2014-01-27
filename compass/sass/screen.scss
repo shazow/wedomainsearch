@@ -20,6 +20,22 @@
     }
 }
 
+footer {
+    @include container;
+    font-size: 0.8em;
+    border-top: 5px solid #ddd;
+    text-align: center;
+    margin: 5em auto 1em auto;
+    padding-top: 0.5em;
+    background: #f8f8f8;
+
+    li {
+        margin-left: 1em;
+        text-align: left;
+    }
+}
+
+
 
 #share {
     margin-top: 0;
