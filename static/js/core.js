@@ -1,4 +1,4 @@
-var SEARCH_API = 'http://domai.nr/api/json/search?callback=?';
+var SEARCH_API = 'http://domai.nr/api/json/search?client_id=wedomainsearch&callback=?';
 
 var FIREBASE_API = 'https://wedomainsearch.firebaseio.com';
 var BUCKET_LEN = 8;
