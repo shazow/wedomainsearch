@@ -1,4 +1,4 @@
-var SEARCH_API = 'http://domai.nr/api/json/search?client_id=wedomainsearch&callback=?';
+var SEARCH_API = 'https://domainr.com/api/json/search?client_id=wedomainsearch&callback=?';
 
 var FIREBASE_API = 'https://wedomainsearch.firebaseio.com';
 var BUCKET_LEN = 8;
@@ -19,7 +19,7 @@ function clean_domain(q) {
 };
 
 function buy_link(domain) {
-    var href = 'http://domai.nr/'+ domain +'/register';
+    var href = 'https://domainr.com/'+ domain +'/register';
 
     return $('<a target="_blank" href="'+ href +'">' + domain + '</a>').click(function() {
         ga('send', 'event', 'domain', 'shop');
