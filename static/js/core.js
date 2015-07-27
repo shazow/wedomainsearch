@@ -1,4 +1,4 @@
-var SEARCH_API = 'https://api.domainr.com/v1/search?client_id=wedomainsearch&callback=?';
+var SEARCH_API = 'https://api.domainr.com/v1/search?client_id={your-mashape-key-or-client_id}&callback=?';
 
 var FIREBASE_API = 'https://wedomainsearch.firebaseio.com';
 var BUCKET_LEN = 8;
